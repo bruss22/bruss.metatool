@@ -1,0 +1,7 @@
+device,name,port,netid,subnet,dhcp,vrf
+Branch-1,Network-1,port2,100,172.16.22.0/24,y,
+Branch-1,Network-2,port4,200,192.168.22.0/24,n,200
+Branch-2,Network-1,port2,100,172.16.23.0/24,y,
+Branch-2,Network-2,port4,200,192.168.23.0/24,n,200
+Branch-3,Network-1,port2,100,172.16.24.0/24,y,
+Branch-3,Network-2,port4,200,192.168.24.0/24,n,200
