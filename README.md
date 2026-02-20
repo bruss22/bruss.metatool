@@ -1,2 +1,4 @@
 # bruss.metatool
-Metavar File Generator
+Metavar File Generator for Fortimanager Import.
+
+
