@@ -1,4 +1,3 @@
-s
 #!/usr/bin/python3
 import os
 from main2025 import *
