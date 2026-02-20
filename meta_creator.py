@@ -1,4 +1,4 @@
-
+s
 #!/usr/bin/python3
 import os
 from main2025 import *
@@ -111,7 +111,7 @@ else:
 
 #print main.j2 file for jinja.loop
 print('\n{# Script #1: Import CLI template For FMG. Create new CLI Jinja Template#}')
-jhead = '''{%- set vlans = 
+jhead = '''{%- set nets = 
   ['''
 print(jhead)
 for x in jinja_out:
