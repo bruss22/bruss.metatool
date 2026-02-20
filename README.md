@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Status](https://img.shields.io/badge/status-lab%20tool-orange)
+![Use Case](https://img.shields.io/badge/use%20case-SD--WAN%20%7C%20FMG%20%7C%20MetaVar-green)
 # bruss.metatool
 
 A lightweight **Python meta-utility** for generating and managing **FortiManager meta-variables** from CSV input.
