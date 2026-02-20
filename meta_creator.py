@@ -110,7 +110,7 @@ else:
         print(exception)
 
 #print main.j2 file for jinja.loop
-print('\n{# Script #1: Import CLI template For FMG. Create new CLI Jinja Template#}')
+print('\n{#Import Script: Import CLI template For FMG build scripts located in jinja.loop#}')
 jhead = '''{%- set nets = 
   ['''
 print(jhead)
