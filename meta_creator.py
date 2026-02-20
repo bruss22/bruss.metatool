@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 import os
 from main2025 import *
@@ -13,7 +12,7 @@ sqlite_file = "metavar.db"
 mysql_config = {
     "host": "xxx.xxx.xxx.xxx",
     "user": "user",
-    "password": "pass",
+    "password": "password",
 }
 mysql_db = "metavar"
 try:
@@ -73,7 +72,7 @@ cur.execute('select variable_name from outfile;')
 names = cur.fetchall()
 keys = columns
 del keys[0]
-temp = {}
+temp = {} 
 jinja = []
 output = set()
 a = 0
@@ -82,6 +81,9 @@ for x in names:
         if 'ul' in x[0]:
             pass
         elif k in x[0]:
+            # needs review, this is a bit hacky but it works. It creates a dict for each variable with the keys being the column names and the values being the
+            # specific variable's value for that column. Once all keys have been added to the temp dict, it adds that dict to a list of dicts (jinja) and also 
+            # creates a string in the format needed for the jinja template and adds that to a set (output) to be printed at the end.
             temp.update({k:x[0]})
             a +=1
             if a == len(keys):
