@@ -11,9 +11,9 @@ outheader = ['variable_name', 'default_value', 'description', 'device', 'VDOM', 
 count = 0
 sqlite_file = "metavar.db"
 mysql_config = {
-    "host": "10.10.2.22",
-    "user": "bruss",
-    "password": "bruss.001",
+    "host": "xxx.xxx.xxx.xxx",
+    "user": "user",
+    "password": "pass",
 }
 mysql_db = "metavar"
 try:
@@ -53,9 +53,6 @@ for row in meta:
         if 'device' not in y:
             if z == 1:
                 name = f"'{name}_{y}','','','{device}','','{name.upper()}'"
-            #elif 'vrf' in y:
-                #add default value 0 to vrf metavar if present.
-            #    name = f"'{name}_{y}',{0},'','{device}','','{row[z]}'"
             elif 'dhcp' in y:
                 #add default value n to dhcp metavar present.
                 name = f"'{name}_{y}','n','','{device}','','{row[z]}'"
@@ -94,7 +91,6 @@ for x in names:
                 a = 0
 jinja_out = sorted(list(output))
 csvout = input('Create a Local CSV FIle? (N): ')
-#printscripts = input('Print Scripts (N): ')
 if 'y' in csvout.lower():
     with open(outfile, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, delimiter=',')
@@ -113,7 +109,7 @@ else:
     except OSError as exception:
         print(exception)
 
-#printscripts = input('Print Scripts (V) for Vlans (P) for Physical Interfaces (N): ')
+#print main.j2 file for jinja.loop
 print('\n{# Script #1: Import CLI template For FMG. Create new CLI Jinja Template#}')
 jhead = '''{%- set vlans = 
   ['''
