@@ -1,11 +1,12 @@
+
 #!/usr/bin/python3
 import os
-from main import *
+from main2025 import *
 dbfile = "metavar.db"
 conn = tkit.dbConnect(dbfile)
 cur = conn.cursor()
 inputfile = 'input_meta.csv'
-outfile = inputfile.replace('.csv','')+'_out_v3.csv'
+outfile = 'meta_creator_out.csv'
 outheader = ['variable_name', 'default_value', 'description', 'device', 'VDOM', 'mapped_value']
 count = 0
 sqlite_file = "metavar.db"
@@ -52,6 +53,9 @@ for row in meta:
         if 'device' not in y:
             if z == 1:
                 name = f"'{name}_{y}','','','{device}','','{name.upper()}'"
+            #elif 'vrf' in y:
+                #add default value 0 to vrf metavar if present.
+            #    name = f"'{name}_{y}',{0},'','{device}','','{row[z]}'"
             elif 'dhcp' in y:
                 #add default value n to dhcp metavar present.
                 name = f"'{name}_{y}','n','','{device}','','{row[z]}'"
@@ -90,6 +94,7 @@ for x in names:
                 a = 0
 jinja_out = sorted(list(output))
 csvout = input('Create a Local CSV FIle? (N): ')
+#printscripts = input('Print Scripts (N): ')
 if 'y' in csvout.lower():
     with open(outfile, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, delimiter=',')
@@ -107,10 +112,8 @@ else:
         os.remove(dbfile)
     except OSError as exception:
         print(exception)
-
-#print main.j2 file for jinja.loop
-print('\n{#Import Script: Import CLI template For FMG build scripts in https://github.com/bruss22/jinja.loop#}')
-jhead = '''{%- set nets = 
+print('\n{# Script #1: Main jinja.loop Import CLI template For FMG. Create new FMG CLI Jinja Template#}')
+jhead = '''{%- set vlans = 
   ['''
 print(jhead)
 for x in jinja_out:
