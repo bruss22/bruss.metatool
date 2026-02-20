@@ -120,7 +120,8 @@ Found tables: ['metavar', 'outfile']
 -%}
 ```
 
-
+⸻
+Intended for POC and Lab use. use at your own risk
 ⸻
 
 Database Utilities
