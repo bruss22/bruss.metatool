@@ -84,7 +84,7 @@ You will be prompted to choose:<br>
 Depending on your selection, the tool will:<br>
 	•	Generate an output CSV file containing metavariables<br>
 	•	OR migrate generated tables into MySQL<br>
-	•	Print a Jinja list header snippet for FortiManager templates<br>
+	•	Print a Jinja snippet for jinja.loop scripts for FortiManager templates<br>
 
 All output follows a consistent schema:<br>
 	•	variable_name<br>
