@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-from main2025 import *
+from main import *
 dbfile = "metavar.db"
 conn = tkit.dbConnect(dbfile)
 cur = conn.cursor()
